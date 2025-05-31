@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Brigadeiros Gourmet - Painel de Vendas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Merriweather:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark-pastel-theme"> <header class="header">
+        <div class="header-content">
+            <h1>Brigadeiros Gourmet</h1>
+            <p>Painel de vendas e controle</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Nossos Doces</h2>
+            <div id="produtos" class="produtos-grid">
+                </div>
+        </aside>
+
+        <main class="content">
+            <nav class="tabs">
+                <button class="tab active" data-tab="venda">Nova Venda</button>
+                <button class="tab" data-tab="controle">Histórico de Vendas</button>
+            </nav>
+
+            <section id="venda" class="tab-content active">
+                <h2>Detalhes da Venda Atual</h2>
+                <div id="venda-atual" class="venda-atual-display">
+                    <p>Nenhum produto selecionado.</p>
+                </div>
+
+                <form id="form-venda" class="form">
+                    <h3>Informações do Cliente</h3>
+                    <input type="text" id="nome" placeholder="Nome do comprador" required />
+                    <input type="tel" id="telefone" placeholder="Telefone (opcional)" />
+                    <input type="date" id="data" required />
+                    <button type="submit">Finalizar Venda</button>
+                </form>
+            </section>
+
+            <section id="controle" class="tab-content">
+                <h2>Controle de Vendas Realizadas</h2>
+                <div class="tabela-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Cliente</th>
+                                <th>Telefone</th>
+                                <th>Produto</th>
+                                <th>Qtd</th>
+                                <th>Total</th>
+                                <th>Data</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="compradores">
+                            </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
