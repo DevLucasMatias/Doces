@@ -4,12 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Brigadeiros Gourmet - Painel de Vendas</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Merriweather:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body class="dark-pastel-theme"> <header class="header">
+<body>
+    <header class="header">
         <div class="header-content">
             <h1>Brigadeiros Gourmet</h1>
             <p>Painel de vendas e controle</p>
@@ -19,8 +18,7 @@
     <div class="container">
         <aside class="sidebar">
             <h2>Nossos Doces</h2>
-            <div id="produtos" class="produtos-grid">
-                </div>
+            <div id="produtos" class="produtos-grid"></div>
         </aside>
 
         <main class="content">
@@ -31,10 +29,7 @@
 
             <section id="venda" class="tab-content active">
                 <h2>Detalhes da Venda Atual</h2>
-                <div id="venda-atual" class="venda-atual-display">
-                    <p>Nenhum produto selecionado.</p>
-                </div>
-
+                <div id="venda-atual" class="venda-atual-display"></div>
                 <form id="form-venda" class="form">
                     <h3>Informações do Cliente</h3>
                     <input type="text" id="nome" placeholder="Nome do comprador" required />
@@ -46,6 +41,18 @@
 
             <section id="controle" class="tab-content">
                 <h2>Controle de Vendas Realizadas</h2>
+                <div class="filtros">
+                    <input type="text" id="filtro-cliente" placeholder="Filtrar por cliente" />
+                    <input type="date" id="filtro-data-inicio" />
+                    <input type="date" id="filtro-data-fim" />
+                    <select id="filtro-status">
+                        <option value="">Todos os Status</option>
+                        <option value="pago">Pago</option>
+                        <option value="nao-pago">Não Pago</option>
+                    </select>
+                    <input type="text" id="filtro-produto" placeholder="Filtrar por produto" />
+                    </div>
+
                 <div class="tabela-wrapper">
                     <table>
                         <thead>
@@ -58,10 +65,9 @@
                                 <th>Data</th>
                                 <th>Status</th>
                                 <th>Ações</th>
-                            </tr>
+                                <th>Remover</th> </tr>
                         </thead>
-                        <tbody id="compradores">
-                            </tbody>
+                        <tbody id="compradores"></tbody>
                     </table>
                 </div>
             </section>
